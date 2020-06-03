@@ -27,7 +27,7 @@ RUN mkdir -p $WORKSPACE \
 USER ${user}
 
 WORKDIR $WORKSPACE
-RUN git clone https://github.com/Riscue/MalConv-Pytorch.git
+RUN git clone https://github.com/Riscue/pytorch-malconv.git
 RUN pip install pandas
 
 WORKDIR $WORKSPACE
