@@ -9,9 +9,10 @@ RUN apt-get install -y --no-install-recommends \
         build-essential \
         git \
         nano \
-        curl
-
+        curl \
+        python3-tk
 RUN rm -rf /var/lib/apt/lists/*
+RUN pip install pandas matplotlib
 
 ARG WORKSPACE=/workspace
 ARG user=user
@@ -28,8 +29,7 @@ USER ${user}
 
 WORKDIR $WORKSPACE
 RUN git clone https://github.com/Riscue/pytorch-malconv.git
-RUN pip install pandas
 
-WORKDIR $WORKSPACE
+WORKDIR $WORKSPACE/pytorch-malconv
 VOLUME $WORKSPACE
 CMD ["/bin/bash"]
