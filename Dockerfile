@@ -32,5 +32,5 @@ RUN git clone https://github.com/Riscue/pytorch-malconv.git
 
 WORKDIR $WORKSPACE/pytorch-malconv
 VOLUME $WORKSPACE
-EXPOSE 80
-CMD python -m http.server 80
+EXPOSE 8000
+CMD python -m http.server
