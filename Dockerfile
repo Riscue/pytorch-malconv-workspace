@@ -31,6 +31,9 @@ WORKDIR $WORKSPACE
 RUN git clone https://github.com/Riscue/pytorch-malconv.git
 
 WORKDIR $WORKSPACE/pytorch-malconv
+RUN python state_dicts.py -d -e -r
+
+
 VOLUME $WORKSPACE
 EXPOSE 8000
 CMD python -m http.server
